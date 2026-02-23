@@ -12,6 +12,7 @@
 .editorconfig
 docs/standards
 docs/v*
+bots/skeleton
 
 # =============================================================================
 # Secrets - CRITICAL: Never commit secrets!
