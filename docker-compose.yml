@@ -1,0 +1,72 @@
+# ============================================================================
+# Bragi Fluxer Bots - Docker Compose
+# ============================================================================
+# FILE VERSION: v1.0.0
+# Repository: https://github.com/the-alphabet-cartel/bragi
+# Community: The Alphabet Cartel - https://discord.gg/alphabetcartel
+# ============================================================================
+### Common Settings ###
+x-common: &common
+  restart: unless-stopped
+  networks:
+    - bragi
+
+### Common Environmental Variables ###
+x-env: &env
+  PGID: ${PGID:-1000}
+  PUID: ${PUID:-1000}
+  TZ: ${TZ:-America/Los_Angeles}
+
+### Common Healthcheck Settings ###
+x-health: &health
+  interval: 5s
+  timeout: 10s
+  retries: 3
+  start_period: 60s
+  start_interval: 30s
+
+services:
+  # ===========================================================================
+  # Portia - Temporary Voice Channels Bot
+  # ===========================================================================
+  portia:
+    image: ghcr.io/the-alphabet-cartel/portia:latest
+    container_name: portia
+    <<: *common
+    environment:
+      <<: *env
+      TOKEN_FILE: /run/secrets/portia_token
+    env_file: .env
+    secrets:
+      - portia_token
+    volumes:
+      - /opt/bragi/bots/portia/logs:/app/logs
+      - /opt/bragi/bots/portia/data:/app/data
+    healthcheck:
+      <<: *health
+
+  prism:
+    image: ghcr.io/the-alphabet-cartel/prism:latest
+    container_name: prism
+    <<: *common
+    environment:
+      <<: *env
+      TOKEN_FILE: /run/secrets/prism_token
+    env_file: .env
+    secrets:
+      - prism_token
+    volumes:
+      - /opt/bragi/bots/prism/logs:/app/logs
+      - /opt/bragi/bots/prism/data:/app/data
+    healthcheck:
+      <<: *health
+
+secrets:
+  portia_token:
+    file: ./secrets/portia_fluxer_token
+  prism_token:
+    file: ./secrets/prism_fluxer_token
+
+networks:
+  bragi:
+    external: true
