@@ -5,11 +5,13 @@
 # Repository: https://github.com/the-alphabet-cartel/bragi
 # Community: The Alphabet Cartel - https://discord.gg/alphabetcartel
 # ============================================================================
+name: bragi
+
 ### Common Settings ###
 x-common: &common
   restart: unless-stopped
   networks:
-    - bragi
+    - bragi-net
 
 ### Common Environmental Variables ###
 x-env: &env
@@ -68,5 +70,5 @@ secrets:
     file: ./secrets/prism_fluxer_token
 
 networks:
-  bragi:
+  bragi-net:
     external: true
