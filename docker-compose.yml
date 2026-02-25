@@ -5,7 +5,7 @@
 # Repository: https://github.com/the-alphabet-cartel/bragi
 # Community: The Alphabet Cartel - https://discord.gg/alphabetcartel
 # ============================================================================
-name: bragi
+name: bragi-bots
 
 ### Common Settings ###
 x-common: &common
