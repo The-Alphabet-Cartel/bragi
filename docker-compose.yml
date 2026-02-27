@@ -47,6 +47,9 @@ services:
     healthcheck:
       <<: *health
 
+  # ===========================================================================
+  # Prism - Introductions Role Assignment Bot
+  # ===========================================================================
   prism:
     image: ghcr.io/the-alphabet-cartel/prism:latest
     container_name: prism
@@ -63,11 +66,43 @@ services:
     healthcheck:
       <<: *health
 
+  # ===========================================================================
+  # Puck - Creator Go Live Bot
+  # ===========================================================================
+  puck-bot:
+    image: ghcr.io/the-alphabet-cartel/puck:latest
+    container_name: puck-bot
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      TOKEN_FILE: /run/secrets/puck_token
+      TWITCH_CLIENT_ID_FILE: /run/secrets/twitch_client_id
+      TWITCH_CLIENT_SECRET_FILE: /run/secrets/twitch_client_secret
+      YOUTUBE_API_KEY_FILE: /run/secrets/youtube_api_key
+    secrets:
+      - puck_token
+      - twitch_client_id
+      - twitch_client_secret
+      - youtube_api_key
+    volumes:
+      - /opt/bragi/puck/logs:/app/logs
+      - /opt/bragi/puck/data:/app/data
+    networks:
+      - bragi
+
 secrets:
   portia_token:
     file: ./secrets/portia_fluxer_token
   prism_token:
     file: ./secrets/prism_fluxer_token
+  puck_token:
+    file: ./secrets/puck_fluxer_token
+  twitch_client_id:
+    file: ./secrets/twitch_client_id
+  twitch_client_secret:
+    file: ./secrets/twitch_client_secret
+  youtube_api_key:
+    file: ./secrets/youtube_api_key
 
 networks:
   bragi-net:
