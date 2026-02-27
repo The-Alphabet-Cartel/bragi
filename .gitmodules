@@ -4,3 +4,6 @@
 [submodule "portia"]
 	path = portia
 	url = https://github.com/The-Alphabet-Cartel/portia
+[submodule "puck"]
+	path = puck
+	url = https://github.com/the-alphabet-cartel/puck
