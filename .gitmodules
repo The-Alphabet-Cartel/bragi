@@ -7,3 +7,6 @@
 [submodule "puck"]
 	path = puck
 	url = https://github.com/the-alphabet-cartel/puck
+[submodule "ratatoskr"]
+	path = ratatoskr
+	url = https://github.com/the-alphabet-cartel/ratatoskr
