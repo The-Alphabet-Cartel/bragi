@@ -42,8 +42,9 @@ services:
     secrets:
       - portia_token
     volumes:
-      - /opt/bragi/bots/portia/logs:/app/logs
-      - /opt/bragi/bots/portia/data:/app/data
+      - /opt/bragi/portia/logs:/app/logs
+      - /opt/bragi/portia/data:/app/data
+      - /opt/bragi/portia/config:/app/src/config
     healthcheck:
       <<: *health
 
@@ -61,24 +62,26 @@ services:
     secrets:
       - prism_token
     volumes:
-      - /opt/bragi/bots/prism/logs:/app/logs
-      - /opt/bragi/bots/prism/data:/app/data
+      - /opt/bragi/prism/logs:/app/logs
+      - /opt/bragi/prism/data:/app/data
+      - /opt/bragi/prism/config:/app/src/config
     healthcheck:
       <<: *health
 
   # ===========================================================================
   # Puck - Creator Go Live Bot
   # ===========================================================================
-  puck-bot:
+  puck:
     image: ghcr.io/the-alphabet-cartel/puck:latest
     container_name: puck-bot
-    restart: unless-stopped
-    env_file: .env
+    <<: *common
     environment:
+      <<: *env
       TOKEN_FILE: /run/secrets/puck_token
       TWITCH_CLIENT_ID_FILE: /run/secrets/twitch_client_id
       TWITCH_CLIENT_SECRET_FILE: /run/secrets/twitch_client_secret
       YOUTUBE_API_KEY_FILE: /run/secrets/youtube_api_key
+    env_file: .env
     secrets:
       - puck_token
       - twitch_client_id
@@ -87,8 +90,29 @@ services:
     volumes:
       - /opt/bragi/puck/logs:/app/logs
       - /opt/bragi/puck/data:/app/data
-    networks:
-      - bragi
+      - /opt/bragi/puck/config:/app/src/config
+    healthcheck:
+      <<: *health
+
+  # ===========================================================================
+  # Ratatoskr - JTFD's Task Manager
+  # ===========================================================================
+  ratatoskr:
+    image: ghcr.io/the-alphabet-cartel/ratatoskr:latest
+    container_name: ratatoskr
+    <<: *common
+    environment:
+      <<: *env
+      TOKEN_FILE: /run/secrets/ratatoskr_token
+    env_file: .env
+    secrets:
+      - ratatoskr_token
+    volumes:
+      - /opt/bragi/ratatoskr/logs:/app/logs
+      - /opt/bragi/ratatoskr/data:/app/data
+      - /opt/bragi/ratatoskr/config:/app/src/config
+    healthcheck:
+      <<: *health
 
 secrets:
   portia_token:
@@ -97,6 +121,8 @@ secrets:
     file: ./secrets/prism_fluxer_token
   puck_token:
     file: ./secrets/puck_fluxer_token
+  ratatoskr_token:
+    file: ./secrets/ratatoskr_fluxer_token
   twitch_client_id:
     file: ./secrets/twitch_client_id
   twitch_client_secret:
