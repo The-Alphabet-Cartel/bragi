@@ -132,4 +132,4 @@ secrets:
 
 networks:
   bragi-net:
-    external: true
+    driver: bridge
