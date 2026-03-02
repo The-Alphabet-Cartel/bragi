@@ -1,6 +1,6 @@
 ---
 name: tac-visual-identity
-description: Visual identity and brand guide for The Alphabet Cartel community. Use this skill whenever generating images, designing UI mockups, creating frontend components, dashboards, or any visual asset for The Alphabet Cartel or its bot ecosystem (Bragi, Ratatoskr, Portia, Prism, Puck, etc.). Also trigger when the user asks for "on-brand" visuals, bot dashboard designs, community graphics, or web interfaces for any TAC project. This skill defines the color palette, art direction, image generation prompt standards, and CSS/design tokens that ensure visual consistency across all Alphabet Cartel outputs.
+description: Brand guide for The Alphabet Cartel. Use for image generation, UI design, dashboards, or visuals for TAC and its bots (Ratatoskr, Portia, Prism, Puck). Defines colors, shadows, and CSS tokens.
 ---
 
 # The Alphabet Cartel — Visual Identity
@@ -139,16 +139,44 @@ have sharp 90-degree corners.
 When generating images for TAC using Imagen, Z-Image, or any image
 generation tool, apply these standards.
 
+### Tool-Specific Notes
+
+**Google Imagen 4** (via gemini-imagen connector):
+- Does NOT support the `negative_prompt` parameter. All avoidance terms
+  must be folded into the main prompt (e.g., "no text, no watermarks").
+- Generated images are saved automatically to the current user's
+  **Windows Pictures directory** (typically `C:\Users\<username>\Pictures`).
+  Let the user know where to find the output.
+- Images are high resolution and may exceed the 1MB tool response limit.
+  If the image cannot be returned inline, remind the user to check their
+  Pictures folder.
+- Models: `imagen-4` (standard, $0.04), `imagen-4-fast` (quick, $0.02),
+  `imagen-4-ultra` (highest quality, $0.06). Default to `imagen-4`.
+
+**Z-Image Turbo** (via Hugging Face connector):
+- Supports resolution as a string enum, e.g. `"1536x864 ( 16:9 )"`.
+- Subject to HuggingFace GPU quotas. If quota is exhausted, fall back
+  to Imagen.
+- Good for rapid iteration; lower fidelity than Imagen 4.
+
 ### Base Style Prompt (always prepend to the user's request)
+
+Fold the TAC aesthetic AND avoidance terms into a single prompt since
+not all tools support separate negative prompts:
 
 ```
 clean modern dark-themed digital illustration, subtle rainbow accent
 lighting, soft ambient glow, smooth rounded shapes, no harsh corners,
 matte dark background with gentle colored light reflections,
-professional and welcoming atmosphere
+professional and welcoming atmosphere, no text, no watermarks,
+no photorealistic faces, no stock photo aesthetic, no bright white
+backgrounds, digital art style
 ```
 
-### Standard Negative Prompt (always apply when the tool supports it)
+### Avoidance Terms Reference
+
+When a tool DOES support a separate negative prompt field, use this list
+instead of embedding avoidance in the main prompt:
 
 ```
 photorealistic faces, stock photo aesthetic, text in image, watermark,
@@ -158,12 +186,12 @@ rainbow blocks, clip art, low quality, blurry
 
 ### Resolution Defaults by Use Case
 
-| Use Case             | Imagen Ratio | Z-Image Resolution         |
-|----------------------|--------------|-----------------------------|
-| Hero/banner image    | `16:9`       | `1536x864 ( 16:9 )`        |
-| Dashboard card art   | `4:3`        | `1152x864 ( 4:3 )`         |
-| Square icon/avatar   | `1:1`        | `1024x1024 ( 1:1 )`        |
-| Mobile banner        | `9:16`       | `864x1536 ( 9:16 )`        |
+| Use Case             | Imagen Ratio | Z-Image Resolution           |
+|----------------------|--------------|-------------------------------|
+| Hero/banner image    | `16:9`       | `1536x864 ( 16:9 )`          |
+| Dashboard card art   | `4:3`        | `1152x864 ( 4:3 )`           |
+| Square icon/avatar   | `1:1`        | `1024x1024 ( 1:1 )`          |
+| Mobile banner        | `9:16`       | `864x1536 ( 9:16 )`          |
 
 ### Per-Bot Themes (future expansion)
 
@@ -186,8 +214,9 @@ bot's accent color in the lighting.
 clean modern dark-themed digital illustration of a Norse-inspired squirrel
 silhouette perched on a stylized world tree, subtle purple and violet
 ambient lighting, soft rainbow accent glow along branches, smooth rounded
-shapes, matte dark background (#0d0d12), professional and welcoming
-atmosphere, event calendar motif integrated subtly into tree branches
+shapes, matte dark background, professional and welcoming atmosphere,
+event calendar motif integrated subtly into tree branches, no text,
+no watermarks, no photorealistic faces, digital art style
 ```
 
 ## CSS Design Tokens (Reference)
@@ -199,10 +228,12 @@ complete copy-pasteable CSS custom properties block and utility classes.
 
 When this skill triggers:
 
-1. **For image generation**: Prepend the base style prompt to the user's
-   description. Apply the negative prompt. Choose the correct resolution
-   for the use case. If a specific bot is mentioned, incorporate its accent
-   color into the prompt.
+1. **For image generation**: Prepend the base style prompt (including
+   avoidance terms) to the user's description. Choose the correct
+   resolution for the use case. If a specific bot is mentioned,
+   incorporate its accent color into the prompt. Default to Imagen 4.
+   Remind the user that generated images land in their Windows Pictures
+   directory.
 
 2. **For UI/frontend design**: Use the color palette, shadow system, corner
    radii, and typography defined here. Reference `references/css-tokens.md`
