@@ -42,9 +42,9 @@ services:
     secrets:
       - portia_token
     volumes:
-      - /opt/bragi/portia/logs:/app/logs
-      - /opt/bragi/portia/data:/app/data
-      - /opt/bragi/portia/config:/app/src/config
+      - ./bots/portia/logs:/app/logs
+      - ./bots/portia/data:/app/data
+      - ./bots/portia/config:/app/src/config
     healthcheck:
       <<: *health
 
@@ -62,9 +62,9 @@ services:
     secrets:
       - prism_token
     volumes:
-      - /opt/bragi/prism/logs:/app/logs
-      - /opt/bragi/prism/data:/app/data
-      - /opt/bragi/prism/config:/app/src/config
+      - ./bots/prism/logs:/app/logs
+      - ./bots/prism/data:/app/data
+      - ./bots/prism/config:/app/src/config
     healthcheck:
       <<: *health
 
@@ -88,9 +88,9 @@ services:
       - twitch_client_secret
       - youtube_api_key
     volumes:
-      - /opt/bragi/puck/logs:/app/logs
-      - /opt/bragi/puck/data:/app/data
-      - /opt/bragi/puck/config:/app/src/config
+      - ./bots/puck/logs:/app/logs
+      - ./bots/puck/data:/app/data
+      - ./bots/puck/config:/app/src/config
     healthcheck:
       <<: *health
 
@@ -108,9 +108,9 @@ services:
     secrets:
       - ratatoskr_token
     volumes:
-      - /opt/bragi/ratatoskr/logs:/app/logs
-      - /opt/bragi/ratatoskr/data:/app/data
-      - /opt/bragi/ratatoskr/config:/app/src/config
+      - ./bots/ratatoskr/logs:/app/logs
+      - ./bots/ratatoskr/data:/app/data
+      - ./bots/ratatoskr/config:/app/src/config
     healthcheck:
       <<: *health
 
