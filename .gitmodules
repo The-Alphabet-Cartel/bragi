@@ -10,3 +10,6 @@
 [submodule "ratatoskr"]
 	path = ratatoskr
 	url = https://github.com/the-alphabet-cartel/ratatoskr
+[submodule "frigg"]
+	path = frigg
+	url = https://github.com/the-alphabet-cartel/frigg
