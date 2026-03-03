@@ -73,7 +73,7 @@ services:
   # ===========================================================================
   puck:
     image: ghcr.io/the-alphabet-cartel/puck:latest
-    container_name: puck-bot
+    container_name: puck
     <<: *common
     environment:
       <<: *env
