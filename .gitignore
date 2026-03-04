@@ -13,6 +13,7 @@
 docs/standards
 docs/v*
 skeleton/
+bots/
 
 # =============================================================================
 # Secrets - CRITICAL: Never commit secrets!
