@@ -200,10 +200,11 @@ the rainbow palette. Current assignments:
 
 | Bot          | Primary Accent | Shadow Tint   | Motif Notes                   |
 |--------------|----------------|---------------|-------------------------------|
-| Ratatoskr    | `--tac-purple` | Purple glow   | Norse squirrel, event/calendar|
+| Frigg        | `--tac-yellow` | Gold glow     | Weaving, fate threads, roles  |
 | Portia       | `--tac-blue`   | Blue glow     | Voice, audio waves            |
 | Prism        | `--tac-green`  | Green glow    | Onboarding, welcome, growth   |
 | Puck         | `--tac-orange` | Orange glow   | Streaming, broadcast, energy  |
+| Ratatoskr    | `--tac-purple` | Purple glow   | Norse squirrel, event/calendar|
 
 When generating images for a specific bot, weight the prompt toward that
 bot's accent color in the lighting.
