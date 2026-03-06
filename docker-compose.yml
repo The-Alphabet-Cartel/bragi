@@ -11,7 +11,7 @@ name: bragi-bots
 x-common: &common
   restart: unless-stopped
   networks:
-    - bragi-net
+    - bragi
 
 ### Common Environmental Variables ###
 x-env: &env
@@ -153,5 +153,5 @@ secrets:
     file: ./secrets/youtube_api_key
 
 networks:
-  bragi-net:
+  bragi:
     driver: bridge
