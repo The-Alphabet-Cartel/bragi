@@ -25,7 +25,7 @@ Bragi is not a bot itself. It is the **top-level orchestration hub** — a monor
 | Repo | Community | Bots |
 |------|-----------|------|
 | [**tac**](https://github.com/the-alphabet-cartel/tac) | The Alphabet Cartel | Portia, Prism, Puck, Frigg |
-| [**jftd**](https://github.com/the-alphabet-cartel/jftd) | Joint Task Force Draugr | Ratatoskr |
+| [**jtfd**](https://github.com/the-alphabet-cartel/jtfd) | Joint Task Force Draugr | Ratatoskr |
 
 ---
 
