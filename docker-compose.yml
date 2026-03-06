@@ -28,6 +28,27 @@ x-health: &health
   start_interval: 30s
 
 services:
+services:
+  # ===========================================================================
+  # Frigg - Role Picker Bot
+  # ===========================================================================
+  frigg:
+    image: ghcr.io/the-alphabet-cartel/frigg:latest
+    container_name: frigg
+    <<: *common
+    environment:
+      <<: *env
+      TOKEN_FILE: /run/secrets/frigg_token
+    env_file: .env
+    secrets:
+      - frigg_token
+    volumes:
+      - ./config:/app/src/config
+      - ./data:/app/data
+      - ./logs:/app/logs
+    healthcheck:
+      <<: *health
+
   # ===========================================================================
   # Portia - Temporary Voice Channels Bot
   # ===========================================================================
@@ -115,6 +136,8 @@ services:
       <<: *health
 
 secrets:
+  frigg_token:
+    file: ./secrets/frigg_fluxer_token
   portia_token:
     file: ./secrets/portia_fluxer_token
   prism_token:
