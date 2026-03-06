@@ -1,6 +1,6 @@
 [submodule "tac"]
 	path = tac
 	url = https://github.com/the-alphabet-cartel/tac
-[submodule "jftd"]
-	path = jftd
+[submodule "jtfd"]
+	path = jtfd
 	url = https://github.com/the-alphabet-cartel/jtfd
