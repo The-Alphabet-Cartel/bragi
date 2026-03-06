@@ -9,8 +9,8 @@ tags:
   - privacy
   - discord-alternative
 author: "PapaBearDoes"
-version: "v1.0"
-last_updated: "2026-02-22"
+version: "v1.1"
+last_updated: "2026-03-05"
 ---
 # Fluxer Platform Assessment
 
@@ -19,10 +19,14 @@ last_updated: "2026-02-22"
 **Community**: [The Alphabet Cartel](https://fluxer.gg/yGJfJH5C) | [alphabetcartel.net](https://alphabetcartel.org)
 ============================================================================
 
-**Document Version**: v1.0
+**Document Version**: v1.1
 **Created**: 2026-02-22
-**Status**: ✅ Decision Reached
-**Last Updated**: 2026-02-22
+**Status**: ✅ Decision Confirmed — Updated March 5, 2026
+**Last Updated**: 2026-03-05
+
+**Version history:**
+- **v1.0** (2026-02-22): Original assessment. Decision reached: hosted fluxer.app, Bragi repurposed as bot infrastructure.
+- **v1.1** (2026-03-05): Updated with developments through March 2026. Original recommendation unchanged and strengthened. New Section 3a documents how subsequent Discord developments have reinforced each original argument. Scorecard and decision log updated.
 
 ---
 
@@ -31,6 +35,7 @@ last_updated: "2026-02-22"
 1. [Summary](#1-summary)
 2. [What Is Fluxer](#2-what-is-fluxer)
 3. [Why Fluxer Fits Our Community](#3-why-fluxer-fits-our-community)
+   - [3a. How March 2026 Discord Developments Reinforce Each Argument](#3a-how-march-2026-discord-developments-reinforce-each-argument)
 4. [Honest Concerns](#4-honest-concerns)
 5. [Why Hosted Over Self-Hosted](#5-why-hosted-over-self-hosted)
 6. [Bot Infrastructure — Bragi's New Role](#6-bot-infrastructure--bragis-new-role)
@@ -42,9 +47,12 @@ last_updated: "2026-02-22"
 
 ## 1. Summary
 
-After researching Discord's threat model, Rocket.Chat's government entanglements, Matrix's federation CSAM/CP risks, Stoat's immaturity, and TeamSpeak's screen sharing limitations, we have identified **Fluxer** (https://fluxer.app) as the first viable community chat platform that genuinely meets our needs.
+After researching Discord's threat model, Rocket.Chat's government entanglements, Matrix's federation CSAM/CP risks, Stoat's immaturity, and TeamSpeak's screen sharing limitations, we identified **Fluxer** (https://fluxer.app) as the first viable community chat platform that genuinely meets our needs.
 
-**The decision:** The Alphabet Cartel will migrate to the hosted **fluxer.app** instance rather than self-hosting. This is the right call for where Fluxer is today, and our members' Plutonium subscriptions (If they so choose to utilize it) directly fund an independent European developer building privacy-respecting open source software — rather than funding Discord's upcoming IPO.
+**The decision:** The Alphabet Cartel migrated to the hosted **fluxer.app** instance. This was the right call when we made it in February 2026. Subsequent developments through March 2026 have validated every argument we made and, in several areas, shown that the risk of staying on Discord was even higher than we assessed.
+
+Our members' Plutonium subscriptions (if they so choose to utilize them) directly fund an independent European developer building privacy-respecting open source software — rather than funding Discord's upcoming IPO or the surveillance infrastructure connected to its identity verification pipeline.
+
 
 ---
 
@@ -72,7 +80,7 @@ The DHS administrative subpoenas we documented in our Discord Threat Assessment 
 
 ### No Age Verification
 
-Fluxer has no mandatory age verification, no facial scan pipeline, no Persona vendor, and no connection to Palantir's surveillance infrastructure. The March 2026 Discord deadline is not our problem.
+Fluxer has no mandatory age verification, no facial scan pipeline, no Persona vendor, no K-ID vendor, and no connection to Palantir's surveillance infrastructure. The March 2026 Discord restrictions are not our problem. The H2 2026 verification prompts are not our problem. The behavioral profiling model running on every Discord user right now is not our problem.
 
 ### Affirming Community Policies
 
@@ -103,6 +111,34 @@ When our members subscribe to Plutonium, they are directly funding an independen
 
 The entire codebase is on GitHub at https://github.com/fluxerapp/fluxer. Anyone on our team can read it. The company is publicly registered. The developer is publicly identified. This is the opposite of a black box.
 
+
+---
+
+### 3a. How March 2026 Discord Developments Reinforce Each Original Argument
+
+*This subsection is new in v1.1. It documents how developments since our original decision have validated — and in several cases strengthened — each argument we made for choosing Fluxer.*
+
+**"Swedish jurisdiction protects members from DHS subpoenas"**
+*Original argument:* MLAT requirements mean DHS cannot serve administrative subpoenas to Fluxer Platform AB the way it can to US-based Discord.
+*What's since been confirmed:* DHS issued hundreds of subpoenas to Google, Meta, Reddit, and Discord targeting accounts that criticized ICE or reported ICE activity. Google, Meta, and Reddit have confirmed compliance with some requests. At least one Google subpoena had its "suspected violation" field left blank — and Google fulfilled it the same day it notified the user. DHS agents showed up at the home of a retired man who sent a polite email criticizing an asylum case. The Swedish MLAT protection is not hypothetical. It is a live shield against an active, escalating program.
+
+**"No age verification pipeline, no Persona, no surveillance infrastructure"**
+*Original argument:* Fluxer has no age verification system, meaning TAC members face none of the identity data risks we documented.
+*What's since been confirmed:* Persona's frontend code exposure revealed it was running 269 distinct checks per user including watchlist screening for terrorism and espionage, with data retention up to three years — while Discord told users their data "wouldn't leave their device." Discord has replaced Persona with K-ID, but the structural architecture (third-party vendor, human-verified fallback, identity data leaving the platform) is unchanged. The behavioral profiling model is running on every Discord user right now. None of this is Fluxer's problem.
+
+**"Teen-by-default restrictions don't affect our community structure"**
+*Original argument:* We anticipated age verification as a pending problem. We moved before it arrived.
+*What's since been confirmed:* The restrictions began rolling out in early March 2026. LGBTQ+ communities are disproportionately impacted because they apply age-restricted settings to create safe adult spaces even for non-sexual content — exactly as TAC does. We are already off the platform. Our community is unaffected by restrictions that are actively disrupting similar communities who stayed.
+
+**"No government entanglement"**
+*Original argument:* Fluxer has no DoD/IC contracts and no connection to the Palantir/ICE investment chain.
+*What's since been confirmed:* ICE's surveillance apparatus has expanded to $85 billion in funding, including Palantir ELITE (Google Maps for deportation targeting, fed by Medicaid data), facial recognition against 1.2 billion photos, and social media monitoring at 8 billion posts per day. The investment chain from Discord's original vendor (Persona) through Founders Fund to Palantir has been publicly confirmed and reported by multiple outlets. Fluxer Platform AB has no connection to any of this.
+
+**"Affirming community policies protect our members"**
+*Original argument:* Fluxer's guidelines explicitly protect LGBTQ+ members; TAC can enforce stronger standards within our own space.
+*What's since been confirmed:* The disproportionate impact on LGBTQIA+ communities of Discord's teen-by-default rollout has been independently confirmed. Trans and nonbinary members face higher rates of facial estimation misidentification, routing them to the manual ID pathway that was compromised in the 2025 breach. The political advocacy content our members produce is exactly the type that DHS has been targeting with administrative subpoenas. Our decision to move to a platform with explicitly affirming policies and Swedish jurisdiction has become more rather than less important since we made it.
+
+
 ---
 
 ## 4. Honest Concerns
@@ -126,7 +162,7 @@ Fluxer is not end-to-end encrypted by default. The roadmap includes opt-in "secr
 - Channel messages and DMs are encrypted in transit (TLS) and at rest on Fluxer's servers in Sweden
 - Fluxer staff could theoretically read messages — as could any platform administrator
 - For truly sensitive conversations (crisis support, coming-out discussions, anything members wouldn't want even a trusted admin to see), members should use **Signal**
-- This is the same trust model as Discord, Slack, and every other non-E2EE platform — the difference is that Fluxer's servers are in Sweden under GDPR
+- This is the same trust model as Discord, Slack, and every other non-E2EE platform — the difference is that Fluxer's servers are in Sweden under GDPR, not in the US under the CLOUD Act
 
 ### Public Beta Status
 
@@ -191,6 +227,7 @@ This means Python Discord libraries can be adapted to connect to Fluxer by overr
 4. Generate bot invite URL with "bot" scope
 5. Invite to The Alphabet Cartel community with appropriate permissions
 
+
 ---
 
 ## 7. Platform Scorecard
@@ -199,16 +236,17 @@ This means Python Discord libraries can be adapted to connect to Fluxer by overr
 |---|---|---|
 | Self-hosted / no third-party data custody | ✅ Hosted in Sweden | EU jurisdiction, GDPR |
 | Open source, auditable | ✅ AGPLv3 | Full codebase public |
-| Outside US jurisdiction | ✅ Swedish company | MLAT required for US law enforcement |
-| No age verification | ✅ | No Persona, no facial scan |
-| LGBTQIA+ affirming policies | ✅ | Explicit in community guidelines |
+| Outside US jurisdiction | ✅ Swedish company | MLAT required for US law enforcement — now confirmed critical given DHS subpoena surge |
+| No age verification | ✅ | No Persona, no K-ID, no facial scan, no behavioral profiling |
+| LGBTQIA+ affirming policies | ✅ | Explicit in community guidelines; disproportionate Discord impact on LGBTQ+ now confirmed |
 | Discord-like UX | ✅ | Closest alternative found |
 | Bot API | ✅ | Discord-compatible, Python viable |
-| No government entanglement | ✅ | No DoD/IC contracts |
+| No government entanglement | ✅ | No DoD/IC contracts; no Palantir investment chain |
 | No mandatory phone/ID | ✅ | Standard registration only |
-| E2EE for channels | ⚠️ Not yet | Opt-in secret chats planned |
+| DHS subpoena protection via jurisdiction | ✅ Swedish MLAT required | Hundreds of DHS subpoenas now confirmed against US platforms |
+| E2EE for channels | ⚠️ Not yet | Opt-in secret chats planned; use Signal for sensitive conversations |
 | Native mobile app | ⚠️ In progress | PWA works, native coming |
-| Production stability | ⚠️ Beta | Growing pains from Discord exodus |
+| Production stability | ⚠️ Beta | Growing pains from Discord exodus; actively improving |
 | Single-developer risk | ⚠️ Mitigated | AGPL + new funding + contributors |
 | Voice without port issues | ✅ Hosted handles it | LiveKit managed by Fluxer |
 
@@ -220,11 +258,12 @@ This means Python Discord libraries can be adapted to connect to Fluxer by overr
 |------|----------|-----------|
 | Feb 2026 | Matrix/Synapse rejected | Federation CSAM replication risk unacceptable for our community |
 | Feb 2026 | Rocket.Chat rejected | Active DoD/IC government marketing; mandatory workspace registration leaks metadata |
-| Feb 2026 | Stoat (Revolt) — discovery layer only | E2EE not yet implemented; unstable under load |
+| Feb 2026 | Stoat (Revolt) — rejected | E2EE not yet implemented; unstable under load; development pace insufficient |
 | Feb 2026 | TeamSpeak 6 — voice-only consideration | Screen sharing unreliable on self-hosted; no text community features |
 | Feb 2026 | Fluxer selected as primary platform | Swedish jurisdiction, AGPLv3, Discord-compatible API, honest roadmap |
 | Feb 2026 | Hosted fluxer.app chosen over self-hosting | Eliminates LiveKit UDP complexity; GDPR compliance delegated to Fluxer AB |
 | Feb 2026 | Bragi repurposed as bot infrastructure | Better use of provisioned hardware; chat platform no longer needs self-hosting |
+| Mar 2026 | Decision confirmed (v1.1 update) | DHS subpoena surge, $85B ICE surveillance apparatus, teen-by-default live, behavioral profiling active — every original argument validated |
 
 ---
 
@@ -238,7 +277,8 @@ This means Python Discord libraries can be adapted to connect to Fluxer by overr
 - Fluxer Platform AB (Swedish corporate registry): https://www.allabolag.se/foretag/fluxer-platform-ab/brandbergen/datacenters/2KJCA7DI5YDLG
 - Fluxer privacy policy: https://fluxer.app/privacy
 - Fluxer community guidelines: https://fluxer.app/guidelines
-- Discord threat assessment (internal): docs/v1.0/discord-threat-assessment.md
+- Discord threat assessment (internal): docs/discord-threat-assessment.md
+- The Alphabet Cartel on Fluxer: https://fluxer.gg/yGJfJH5C
 
 ---
 
