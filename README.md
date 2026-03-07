@@ -24,8 +24,8 @@ Bragi is not a bot itself. It is the **top-level orchestration hub** — a monor
 
 | Repo | Community | Bots |
 |------|-----------|------|
-| [**tac**](https://github.com/the-alphabet-cartel/tac) | The Alphabet Cartel | Portia, Prism, Puck, Frigg |
-| [**jtfd**](https://github.com/the-alphabet-cartel/jtfd) | Joint Task Force Draugr | Ratatoskr |
+| [**tac**](https://github.com/the-alphabet-cartel/tac) | The Alphabet Cartel | Portia, Prism, Puck |
+| [**jtfd**](https://github.com/the-alphabet-cartel/jtfd) | Joint Task Force Draugr | Frigg, Ratatoskr |
 
 ---
 
@@ -37,13 +37,13 @@ bragi/
 │   ├── portia/                   ← Git submodule → the-alphabet-cartel/portia
 │   ├── prism/                    ← Git submodule → the-alphabet-cartel/prism
 │   ├── puck/                     ← Git submodule → the-alphabet-cartel/puck
-│   ├── frigg/                    ← Git submodule → the-alphabet-cartel/frigg
 │   ├── docker-compose.yml        ← TAC bot stack
 │   └── secrets/
 │       └── README.md             ← TAC credential setup guide (committed)
-├── jftd/                         ← Git submodule → the-alphabet-cartel/jftd
+├── jtfd/                         ← Git submodule → the-alphabet-cartel/jtfd
+│   ├── frigg/                    ← Git submodule → the-alphabet-cartel/frigg
 │   ├── ratatoskr/                ← Git submodule → the-alphabet-cartel/ratatoskr
-│   ├── docker-compose.yml        ← JFTD bot stack
+│   ├── docker-compose.yml        ← JTFD bot stack
 │   └── secrets/
 │       └── README.md             ← JFTD credential setup guide (committed)
 ├── docs/
